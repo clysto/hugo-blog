@@ -1,0 +1,3 @@
+#!/bin/bash
+
+hugo --minify && rsync -avz --delete public/ root@maoyachen.com:/var/www/blog

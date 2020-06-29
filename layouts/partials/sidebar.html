@@ -1,0 +1,23 @@
+<div class="sidebar" id="sidebar">
+  <div class="sidebar__sticky">
+    <h1 class="sidebar__sticky__logo">
+      <a href="/">
+        {{ .Site.Params.logo }}
+      </a>
+    </h1>
+    <p class="sidebar__sticky__description">
+      {{ .Site.Params.description }}
+    </p>
+    <ul class="sidebar__sticky__links">
+      {{ range .Site.Params.links }}
+      <li class="sidebar__sticky__links__item"><a href="{{ .href }}">{{ .name }}</a></li>
+      {{ end }}
+    </ul>
+    <div class="sidebar__sticky__media">
+      {{- range .Site.Params.media -}}
+      <a href="{{ .href }}" target="blank"><span class="{{ .icon }}"></span></a>
+      {{- end -}}
+    </div>
+  </div>
+</div>
+<div id="mask"></div>

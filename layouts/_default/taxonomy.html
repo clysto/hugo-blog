@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+  <div>
+    <h1 class="title">{{ .Title }}</h1>
+    <ul class="articles">
+      {{- range .Pages -}} 
+      {{- partial "item.html" . -}} 
+      {{- end -}}
+    </ul>
+  </div>
+</main>
+{{ end }}

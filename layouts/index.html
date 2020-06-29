@@ -1,0 +1,9 @@
+{{ define "main" }}
+<main>
+  {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts").ByDate.Reverse }}
+  {{ range $paginator.Pages }}    
+  {{- partial "article.html" (dict "context" . "summary" true) -}}
+  {{ end }}
+  {{- partial "pagination.html" . -}}
+</main>
+{{ end }}

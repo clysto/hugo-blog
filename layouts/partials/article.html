@@ -1,0 +1,39 @@
+<article>
+  <header>
+    <h1>
+      {{ if .summary }}
+      <a href="{{.context.Permalink}}">
+        {{ .context.Title }}
+      </a>
+      {{ else }} {{ .context.Title }} {{ end }}
+    </h1>
+    <p>
+      <span>
+        {{.context.Date.Format "Mon Jan 02 2006"}}
+      </span>
+      {{ if .context.Params.tags }} on {{ range .context.Params.tags }}
+      <span>
+        <a class="tag" href="/tags/{{ . | urlize }}">{{.}}</a>
+      </span>
+      {{ end }} {{ end }}
+    </p>
+  </header>
+  {{ if .summary }}
+  <content class="summary">
+    {{ .context.Summary }}
+  </content>
+  {{ else }}
+  <content>
+    {{ .context.Content }}
+  </content>
+  {{ end }} {{ if .summary }}
+  <footer>
+    <span>Continue reading </span>
+    <strong>
+      <a href="{{.context.Permalink}}">
+        {{ .context.Title }}
+      </a>
+    </strong>
+  </footer>
+  {{ end }}
+</article>

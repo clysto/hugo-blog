@@ -1,0 +1,24 @@
+<head>
+  {{ if .IsHome }}
+  <title>{{ .Title }}</title>
+  {{ else }}
+  <title>{{ .Title }} | Blog</title>
+  {{ end }}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ .Description }}" />
+  <base href="{{ .Site.BaseURL }}" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/iconmoon.css" />
+  <link rel="stylesheet" href="/index.css" />
+  <link rel="stylesheet" href="/article.css" />
+  <script src="/turbolinks.js"></script>
+  <style>
+    .turbolinks-progress-bar {
+      visibility: hidden;
+    }
+  </style>
+</head>

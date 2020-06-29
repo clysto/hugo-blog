@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+  <h1 class="title">{{ .Title }}</h1>
+  {{ $paginator := .Paginate (.Pages).ByDate.Reverse .Site.Params.listPaginate }}
+  {{ range $paginator.Pages }}
+  <ul class="articles">
+    {{- partial "item.html" . -}} 
+  </ul>
+  {{ end }}
+  {{- partial "pagination.html" . -}}
+</main>
+{{ end }}

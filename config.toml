@@ -1,0 +1,80 @@
+baseURL = "https://maoyachen.com/"
+languageCode = "en-us"
+title = "Blog | Mao"
+disqusShortname = "maoyachen"
+paginate = 5
+paginatePath = "page"
+hasCJKLanguage = true
+googleAnalytics = "UA-159307638-1"
+
+[taxonomies]
+tag = "tags"
+
+[permalinks]
+posts = "/:section/:year/:month/:day/:filename/"
+
+[related]
+threshold = 80
+includeNewer = true
+toLower = true
+
+[[related.indices]]
+name = "keywords"
+weight = 100
+
+[[related.indices]]
+name = "date"
+weight = 10
+
+[[related.indices]]
+name = "tags"
+weight = 100
+
+[params]
+description = "Personal blog about the little stuff I know."
+logo = "Ya Chen"
+listPaginate = 10
+
+[[params.links]]
+name = "Posts"
+href = "/posts"
+
+[[params.links]]
+name = "About"
+href = "/about"
+
+[[params.links]]
+name = "Tags"
+href = "/tags"
+
+[[params.links]]
+name = "Friends"
+href = "/friends"
+
+[[params.media]]
+icon = "icon-twitter"
+href = "https://twitter.com/clysto_55"
+
+[[params.media]]
+icon = "icon-github"
+href = "https://github.com/clysto"
+
+[[params.media]]
+icon = "icon-mail"
+href = "mailto:<maoyachen55@gmail.com>"
+
+[[params.media]]
+icon = "icon-instagram"
+href = "https://www.instagram.com/clysto_55/"
+
+[[params.media]]
+icon = "icon-sina-weibo"
+href = "https://www.weibo.com/u/5518480283"
+
+[markup]
+
+[markup.highlight]
+style = "github"
+
+[markup.goldmark.renderer]
+unsafe = true

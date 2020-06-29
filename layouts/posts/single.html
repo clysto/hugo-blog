@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main>
+  {{- partial "article.html" (dict "context" . "summary" false) -}}
+  {{ $related := .Site.RegularPages.Related . }}
+  {{ with $related }}
+  <h1 class="title">Related</h1>
+  <div class="related">
+    <ul class="articles">
+      {{range first 5 $related}}
+      {{ partial "item.html" . }}
+      {{end}}
+    </ul>
+  </div>
+  {{end}}
+
+  <h1 class="title">Comments</h1>
+  <div class="comments">
+    {{ partial "disqus.html" . }}
+  </div>
+</main>
+{{ end }}

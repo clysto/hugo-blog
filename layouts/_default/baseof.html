@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  {{- partial "head.html" . -}}
+  <body>
+    {{- partial "sidebar.html" . -}}
+    <div class="content">
+      <a id="menu" class="icon-menu"></a>
+      {{- block "main" . }}{{- end }} {{- partial "footer.html" . -}}
+    </div>
+    <script>
+      var $menuButton = document.getElementById('menu');
+      var $sidebar = document.getElementById('sidebar');
+      var $mask = document.getElementById('mask');
+      $menuButton.onclick = function () {
+        $sidebar.className = 'sidebar show';
+        $mask.className = 'show';
+      };
+      $mask.onclick = function () {
+        $sidebar.className = 'sidebar';
+        $mask.className = '';
+      };
+    </script>
+    {{ template "_internal/google_analytics.html" . }}
+  </body>
+</html>
