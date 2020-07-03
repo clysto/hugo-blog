@@ -25,6 +25,9 @@ Docker version 19.03.8, build afacb8b
 
 参见官方给的[例子](https://github.com/Dreamacro/clash/wiki/Configuration#all-configuration-options)：
 
+<details>
+<summary>example</summary>
+
 ```yaml
 # Port of HTTP(S) proxy server on the local end
 port: 7890
@@ -365,6 +368,8 @@ rules:
   - RULE-SET,apple,REJECT # Premium only
   - MATCH,auto
 ```
+
+</details>
 
 **将其中的节点列表改为你自己的节点信息即可，同时注意如果要在docker中运行需要更改以下两个配置：**
 
