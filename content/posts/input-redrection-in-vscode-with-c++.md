@@ -2,6 +2,7 @@
 title: "VS code C++ 程序调试重定向"
 date: 2020-07-08T15:59:10+08:00
 draft: false
+tags: ['vscode', 'c++']
 ---
 
 > 检索了很久都是说直接在lanuch.json中设置args参数：
