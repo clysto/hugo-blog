@@ -6,19 +6,21 @@
   {{ end }}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="{{ .Description }}" />
+  {{ if .Summary }}
+  <meta name="description" content="{{ .Summary }}" />
+  {{ else }}
+  <meta name="description" content="{{ .Site.Params.description }}" />
+  {{ end }}
+  <meta name="keywords" content="{{ .Keywords }}" />
+  <meta name="tags" content="{{ .Params.tags }}" />
+  <meta name="author" content="{{ .Site.Params.author }}">
   <base href="{{ .Site.BaseURL }}" />
   <link
     href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="/iconmoon.css" />
-  <link rel="stylesheet" href="/index.css" />
-  <link rel="stylesheet" href="/article.css" />
-  <script src="/turbolinks.js"></script>
-  <style>
-    .turbolinks-progress-bar {
-      visibility: hidden;
-    }
-  </style>
+  {{ $js := resources.Get "js/main.js" | js.Build (dict "target" "es5") }}
+  {{ $css := resources.Match "css/**.css" | resources.Concat "main.css"}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  <script src="{{ $js.RelPermalink }}"></script>
 </head>

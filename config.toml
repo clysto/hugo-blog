@@ -1,5 +1,5 @@
 baseURL = "https://maoyachen.com/"
-languageCode = "en-us"
+languageCode = "zh"
 title = "Blog | Mao"
 disqusShortname = "maoyachen"
 paginate = 5
@@ -33,6 +33,7 @@ weight = 100
 [params]
 description = "Personal blog about the little stuff I know."
 logo = "Ya Chen"
+author = "毛亚琛"
 listPaginate = 10
 
 [[params.links]]

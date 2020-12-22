@@ -2,10 +2,10 @@
   {{ if .Paginator.HasNext }}
   <a class="pagination__older" href="{{ .Paginator.Next.URL }}">Older</a>
   {{ else }}
-  <a class="pagination__older disabled" aria-disabled>Older</a>
+  <a class="pagination__older disabled" aria-disabled="true">Older</a>
   {{ end }} {{ if .Paginator.HasPrev }}
   <a class="pagination__newer" href="{{ .Paginator.Prev.URL }}">Newer</a>
   {{ else }}
-  <a class="pagination__newer disabled" aria-disabled>Newer</a>
+  <a class="pagination__newer disabled" aria-disabled="true">Newer</a>
   {{ end }}
 </div>
