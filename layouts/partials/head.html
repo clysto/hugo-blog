@@ -19,8 +19,8 @@
     href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet"
   />
-  {{ $js := resources.Get "js/main.js" | js.Build (dict "target" "es5") }}
-  {{ $css := resources.Match "css/**.css" | resources.Concat "main.css"}}
+  {{ $js := resources.Get "js/main.js" | js.Build (dict "target" "es5") | minify }}
+  {{ $css := resources.Match "css/**.css" | resources.Concat "main.css" | minify }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   <script src="{{ $js.RelPermalink }}"></script>
 </head>
