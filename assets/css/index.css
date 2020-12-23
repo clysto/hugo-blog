@@ -4,6 +4,15 @@
   --color-light-blue: rgba(38, 139, 210, 0.2);
 }
 
+#map {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 100;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -275,6 +284,12 @@ li.term .term__count {
 @media screen and (max-width: 1400px) {
   :root {
     --sidebar-width: 320px;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  #map {
+    display: none;
   }
 }
 
