@@ -8,26 +8,7 @@
       {{- block "main" . }}
       {{- end }}
       {{- partial "footer.html" . -}}
-      <aside>
-        <canvas id='map'></canvas>
-      </aside>
     </div> 
     {{ template "_internal/google_analytics.html" . }}
-    <script src="/pagemap-1.4.0.min.js"></script>
-    <script>
-      pagemap(document.querySelector('#map'), {
-        viewport: null,
-        styles: {
-          'main header,main footer,main section,main article': 'rgba(0,0,0,0.08)',
-          'main h1,main a,main code': 'rgba(0,0,0,0.10)',
-          'main h2,main h3,main h4': 'rgba(0,0,0,0.08)',
-          'main img,main table': 'rgba(0,0,0,0.04)',
-        },
-        back: 'rgba(0,0,0,0.02)',
-        view: 'rgba(0,0,0,0.05)',
-        drag: 'rgba(0,0,0,0.10)',
-        interval: null,
-      });
-    </script>
   </body>
 </html>
